@@ -4858,10 +4858,10 @@
             if (target.hidden) return _slideDown(target, duration); else return _slideUp(target, duration);
         };
         let bodyLockStatus = true;
-        let bodyLockToggle = (delay = 500) => {
+        let bodyLockToggle = (delay = 0) => {
             if (document.documentElement.classList.contains("lock")) bodyUnlock(delay); else bodyLock(delay);
         };
-        let bodyUnlock = (delay = 500) => {
+        let bodyUnlock = (delay = 0) => {
             let body = document.querySelector("body");
             if (bodyLockStatus) {
                 let lock_padding = document.querySelectorAll("[data-lp]");
@@ -4879,7 +4879,7 @@
                 }), delay);
             }
         };
-        let bodyLock = (delay = 500) => {
+        let bodyLock = (delay = 0) => {
             let body = document.querySelector("body");
             if (bodyLockStatus) {
                 let lock_padding = document.querySelectorAll("[data-lp]");
@@ -5077,12 +5077,15 @@
             let menuBody = document.querySelector(".menu__body");
             if (iconMenu) document.addEventListener("click", (function(e) {
                 if (bodyLockStatus && e.target.closest(".icon-menu")) {
-                    bodyLockToggle();
                     document.documentElement.classList.toggle("menu-open");
+                    if (document.querySelector(".mobile-menu").classList.contains("_active")) {
+                        document.querySelector(".mobile-menu").classList.remove("_active");
+                        document.querySelector(".mobile-menu__catalog").classList.remove("_active");
+                    } else bodyLockToggle();
                 }
                 if (document.documentElement.classList.contains("menu-open")) if (!iconMenu.contains(e.target) && !menuBody.contains(e.target)) {
                     document.documentElement.classList.remove("menu-open");
-                    bodyUnlock();
+                    if (!e.target.closest(".mobile-menu__block--catalog")) bodyUnlock();
                 }
             }));
         }
@@ -9854,7 +9857,7 @@
                     speed: 400
                 });
                 new core(".item__slider", {
-                    modules: [ Navigation, Thumb ],
+                    modules: [ Navigation, Thumb, Pagination ],
                     observer: true,
                     observeParents: true,
                     slidesPerView: 1,
@@ -9864,6 +9867,10 @@
                     speed: 200,
                     thumbs: {
                         swiper: itemThumb
+                    },
+                    pagination: {
+                        el: ".item__pagination",
+                        clickable: true
                     },
                     navigation: {
                         prevEl: ".item__slide-button-prev",
@@ -12782,21 +12789,6 @@ PERFORMANCE OF THIS SOFTWARE.
                 }
             }
             //!======================================================================================================
-                        if (e.target.closest(".header__search")) {
-                const search = document.querySelector(".header__search");
-                if (search) if (search.nextElementSibling.hasAttribute("hidden")) {
-                    search.classList.add("_active");
-                    _slideDown(search.nextElementSibling);
-                }
-            }
-            if (!document.querySelector(".header__search-wrapper").contains(e.target)) {
-                const search = document.querySelector(".header__search");
-                if (search) {
-                    search.classList.remove("_active");
-                    _slideUp(search.nextElementSibling);
-                }
-            }
-            //!======================================================================================================
                         if (e.target.closest(".main-catalog__cards-state-btn")) {
                 let parent = e.target.closest(".main-catalog__cards-state-btns");
                 parent.querySelectorAll(".main-catalog__cards-state-btn").forEach((el => {
@@ -12808,6 +12800,79 @@ PERFORMANCE OF THIS SOFTWARE.
                 cards.classList.remove("_active");
                 if (e.target.classList.contains("_icon-lines")) cards.classList.add("_active");
             }
+            //!======================================================================================================
+                        if (e.target.closest(".header__mobile-search-btn")) {
+                const searchBtn = document.querySelector(".header__mobile-search-btn");
+                if (searchBtn) {
+                    searchBtn.closest(".header__mobile-search-block").classList.add("_active");
+                    bodyLock(0);
+                    document.querySelector(".header__search-input").focus();
+                }
+            }
+            if (e.target.closest(".header__search-cancel-btn")) {
+                const cancelBtn = document.querySelector(".header__search-cancel-btn");
+                const headerSearch = searchInput.closest(".header__search");
+                if (cancelBtn) {
+                    cancelBtn.closest(".header__mobile-search-block").classList.remove("_active");
+                    bodyUnlock(0);
+                    headerSearch.classList.remove("_active");
+                    _slideUp(headerSearch.nextElementSibling);
+                }
+            }
+            //!======================================================================================================
+                        if (e.target.closest(".mobile-menu__block--catalog")) {
+                const mobileBtn = document.querySelector(".mobile-menu__block--catalog");
+                const mobileCatalog = document.querySelector(".mobile-menu__catalog");
+                const searchBlock = document.querySelector(".header__mobile-search-block");
+                if (mobileBtn) if (document.querySelector("html").classList.contains("lock") && !mobileCatalog.classList.contains("_active")) {
+                    mobileBtn.closest(".mobile-menu").classList.add("_active");
+                    mobileCatalog.classList.add("_active");
+                } else if (!document.querySelector("html").classList.contains("lock") && !mobileCatalog.classList.contains("_active")) {
+                    mobileBtn.closest(".mobile-menu").classList.add("_active");
+                    mobileCatalog.classList.add("_active");
+                    bodyLock(0);
+                } else {
+                    mobileBtn.closest(".mobile-menu").classList.remove("_active");
+                    mobileCatalog.classList.remove("_active");
+                    searchBlock.classList.remove("_active");
+                    bodyUnlock(0);
+                }
+            }
+            if (e.target.closest(".menu__catalog-title")) {
+                const catalogBtn = document.querySelector(".mobile-menu__block--catalog");
+                const mobileCatalog = document.querySelector(".mobile-menu__catalog");
+                const mobileMenu = document.querySelector(".mobile-menu");
+                if (catalogBtn) {
+                    mobileCatalog.classList.add("_active");
+                    mobileMenu.classList.add("_active");
+                    document.documentElement.classList.remove("menu-open");
+                }
+            }
+            //!======================================================================================================
+                        if (e.target.closest(".mobile-menu__item-title-wrapper")) {
+                const nextElement = e.target.closest(".mobile-menu__item-title-wrapper").nextElementSibling;
+                if (nextElement && nextElement.classList.contains("mobile-menu__subcatalog")) nextElement.classList.add("_active");
+            }
+            if (e.target.closest(".mobile-menu__go-back")) {
+                const subcatalog = e.target.closest(".mobile-menu__subcatalog");
+                subcatalog.classList.remove("_active");
+            }
+        }
+        const searchInput = document.querySelector(".header__search-input");
+        if (searchInput) {
+            const headerSearch = searchInput.closest(".header__search");
+            searchInput.addEventListener("focus", (function() {
+                if (headerSearch.nextElementSibling.hasAttribute("hidden")) {
+                    headerSearch.classList.add("_active");
+                    _slideDown(headerSearch.nextElementSibling);
+                }
+            }));
+            document.addEventListener("click", (function(e) {
+                if (!document.querySelector(".header__search-wrapper").contains(e.target)) {
+                    headerSearch.classList.remove("_active");
+                    _slideUp(headerSearch.nextElementSibling);
+                }
+            }));
         }
         const blockSort = document.querySelectorAll(".cards-slider--sort");
         if (blockSort) blockSort.forEach((block => {
@@ -12852,6 +12917,8 @@ PERFORMANCE OF THIS SOFTWARE.
             }));
             if (window.innerWidth < 600) video.removeAttribute("autoplay");
         }
+        let collapse = document.querySelector(".main-catalog__left-wrapper-btn");
+        if (collapse) if (document.documentElement.clientWidth < 880) collapse.classList.remove("_spoller-active");
         isWebp();
         menuInit();
         spollers();

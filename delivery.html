@@ -2,10 +2,10 @@
 <html lang="ru">
 
 <head>
-	<title>Главная</title>
+	<title>Доставка</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
-	<link rel="stylesheet" href="css/style.min.css?_v=20230510174127">
+	<link rel="stylesheet" href="css/style.min.css?_v=20230513134919">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
@@ -17,7 +17,9 @@
 					<img src="img/logo.svg" alt="logo">
 				</a>
 				<div class="header__mobile-buttons-wrapper">
-					<a href="#" class="header__mobile-search-btn _icon-search"></a>
+					<div class="header__mobile-search-block">
+						<button class="header__mobile-search-btn _icon-search"></button>
+					</div>
 					<a href="tel:84951222018" class="header__mobile-phone-btn _icon-phone-full"></a>
 					<div class="header__menu menu">
 						<button type="button" class="menu__icon icon-menu"><span></span></button>
@@ -32,32 +34,6 @@
 								<ul>
 									<li>
 										<a href="#" class="menu__catalog-title _icon-arrow">Каталог</a>
-										<ul class="menu__catalog">
-											<li class="catalog__title">
-												<div class="catalog__img-wrapper">
-													<picture><source srcset="img/mini-icons/1.webp" type="image/webp"><img src="img/mini-icons/1.png" alt="Image"></picture>
-												</div>
-												<span class="_icon-arrow">Оборудование штрих-кодирования</span>
-											</li>
-											<li class="catalog__title">
-												<div class="catalog__img-wrapper">
-													<picture><source srcset="img/mini-icons/2.webp" type="image/webp"><img src="img/mini-icons/2.png" alt="Image"></picture>
-												</div>
-												<span class="_icon-arrow">Банковское оборудование</span>
-											</li>
-											<li class="catalog__title">
-												<div class="catalog__img-wrapper">
-													<picture><source srcset="img/mini-icons/3.webp" type="image/webp"><img src="img/mini-icons/3.png" alt="Image"></picture>
-												</div>
-												<span class="_icon-arrow">Электронное торговое оборудование</span>
-											</li>
-											<li class="catalog__title">
-												<div class="catalog__img-wrapper">
-													<picture><source srcset="img/mini-icons/4.webp" type="image/webp"><img src="img/mini-icons/4.png" alt="Image"></picture>
-												</div>
-												<span class="_icon-arrow">Оборудование для торговли</span>
-											</li>
-										</ul>
 									</li>
 									<li><a href="#" class="_icon-arrow">Услуги</a></li>
 									<li><a href="#" class="_icon-arrow">Доставка</a></li>
@@ -780,11 +756,13 @@
 							</ul>
 						</nav>
 					</div>
-
-					<div class="header__search-wrapper">
+					<div class="header__search-wrapper" data-da=".header__mobile-search-block, 600, first">
 						<form action="#" class="header__search">
-							<input autocomplete="off" type="text" name="search" data-required data-error placeholder="Поиск" class="header__search-input input">
-							<button class="header__search-btn _icon-search"></button>
+							<div class="header__search-input-wrapper">
+								<input autocomplete="off" type="text" name="search" data-required data-error placeholder="Поиск" class="header__search-input input">
+								<button class="header__search-btn _icon-search"></button>
+							</div>
+							<button type="button" class="header__search-cancel-btn">Отмена</button>
 						</form>
 						<div class="header__search-slide-block" hidden>
 							<ul class="header__search-list">
@@ -897,25 +875,25 @@
 								<div class="catalog__main">
 									<div data-tabs class="catalog__tabs-main">
 										<nav data-tabs-titles class="catalog__navigation catalog__navigation-main">
-											<button type="submit" class="catalog__title _tab-active">
+											<button type="button" class="catalog__title _tab-active">
 												<div class="catalog__img-wrapper">
 													<picture><source srcset="img/mini-icons/1.webp" type="image/webp"><img src="img/mini-icons/1.png" alt="Image"></picture>
 												</div>
 												<span class="_icon-arrow">Оборудование штрих-кодирования</span>
 											</button>
-											<button type="submit" class="catalog__title">
+											<button type="button" class="catalog__title">
 												<div class="catalog__img-wrapper">
 													<picture><source srcset="img/mini-icons/2.webp" type="image/webp"><img src="img/mini-icons/2.png" alt="Image"></picture>
 												</div>
 												<span class="_icon-arrow">Банковское оборудование</span>
 											</button>
-											<button type="submit" class="catalog__title">
+											<button type="button" class="catalog__title">
 												<div class="catalog__img-wrapper">
 													<picture><source srcset="img/mini-icons/3.webp" type="image/webp"><img src="img/mini-icons/3.png" alt="Image"></picture>
 												</div>
 												<span class="_icon-arrow">Электронное торговое оборудование</span>
 											</button>
-											<button type="submit" class="catalog__title">
+											<button type="button" class="catalog__title">
 												<div class="catalog__img-wrapper">
 													<picture><source srcset="img/mini-icons/4.webp" type="image/webp"><img src="img/mini-icons/4.png" alt="Image"></picture>
 												</div>
@@ -926,25 +904,25 @@
 											<div class="catalog__body catalog__body--second">
 												<div data-tabs class="catalog__tabs">
 													<nav data-tabs-titles class="catalog__navigation catalog__navigation--second">
-														<button type="submit" class="catalog__title _tab-active">
+														<button type="button" class="catalog__title _tab-active">
 															<div class="catalog__img-wrapper">
 																<picture><source srcset="img/mini-icons/5.webp" type="image/webp"><img src="img/mini-icons/5.png" alt="Image"></picture>
 															</div>
 															<span class="_icon-arrow">Ручные терминалы сбора данных (2032)</span>
 														</button>
-														<button type="submit" class="catalog__title">
+														<button type="button" class="catalog__title">
 															<div class="catalog__img-wrapper">
 																<picture><source srcset="img/mini-icons/6.webp" type="image/webp"><img src="img/mini-icons/6.png" alt="Image"></picture>
 															</div>
 															<span class="_icon-arrow">Планшетные терминалы сбора данных (168)</span>
 														</button>
-														<button type="submit" class="catalog__title">
+														<button type="button" class="catalog__title">
 															<div class="catalog__img-wrapper">
 																<picture><source srcset="img/mini-icons/7.webp" type="image/webp"><img src="img/mini-icons/7.png" alt="Image"></picture>
 															</div>
 															<span class="_icon-arrow">Терминалы сбора данных на транспорт (290)</span>
 														</button>
-														<button type="submit" class="catalog__title">
+														<button type="button" class="catalog__title">
 															<div class="catalog__img-wrapper">
 																<picture><source srcset="img/mini-icons/8.webp" type="image/webp"><img src="img/mini-icons/8.png" alt="Image"></picture>
 															</div>
@@ -1070,25 +1048,25 @@
 											<div class="catalog__body catalog__body--second">
 												<div data-tabs class="catalog__tabs">
 													<nav data-tabs-titles class="catalog__navigation catalog__navigation--second">
-														<button type="submit" class="catalog__title _tab-active">
+														<button type="button" class="catalog__title _tab-active">
 															<div class="catalog__img-wrapper">
 																<picture><source srcset="img/mini-icons/5.webp" type="image/webp"><img src="img/mini-icons/5.png" alt="Image"></picture>
 															</div>
 															<span class="_icon-arrow">Ручные терминалы сбора данных (2032)</span>
 														</button>
-														<button type="submit" class="catalog__title">
+														<button type="button" class="catalog__title">
 															<div class="catalog__img-wrapper">
 																<picture><source srcset="img/mini-icons/6.webp" type="image/webp"><img src="img/mini-icons/6.png" alt="Image"></picture>
 															</div>
 															<span class="_icon-arrow">Планшетные терминалы сбора данных (168)</span>
 														</button>
-														<button type="submit" class="catalog__title">
+														<button type="button" class="catalog__title">
 															<div class="catalog__img-wrapper">
 																<picture><source srcset="img/mini-icons/7.webp" type="image/webp"><img src="img/mini-icons/7.png" alt="Image"></picture>
 															</div>
 															<span class="_icon-arrow">Терминалы сбора данных на транспорт (290)</span>
 														</button>
-														<button type="submit" class="catalog__title">
+														<button type="button" class="catalog__title">
 															<div class="catalog__img-wrapper">
 																<picture><source srcset="img/mini-icons/8.webp" type="image/webp"><img src="img/mini-icons/8.png" alt="Image"></picture>
 															</div>
@@ -1543,6 +1521,155 @@
 				</div>
 			</div>
 		</header>
+
+		<div class="mobile-menu">
+			<div class="mobile-menu__wrapper">
+				<a href="index.html" class="mobile-menu__block _icon-home">
+					Главная
+				</a>
+				<div class="mobile-menu__block mobile-menu__block--catalog _icon-squares">
+					Каталог
+				</div>
+				<a href="#" class="mobile-menu__block _icon-cart">
+					Корзина
+				</a>
+				<a href="#" class="mobile-menu__block _icon-user">
+					Профиль
+				</a>
+				<a href="#" class="mobile-menu__block _icon-heart">
+					Избранное
+				</a>
+			</div>
+			<div class="mobile-menu__catalog">
+				<p class="mobile-menu__catalog-title">Каталог</p>
+				<nav class="mobile-menu__catalog-main">
+					<ul class="mobile-menu__catalog-ul">
+						<li class="mobile-menu__catalog-item-title">
+							<button class="mobile-menu__item-title-wrapper">
+								<div class="mobile-menu__img-wrapper">
+									<picture><source srcset="img/mini-icons/1.webp" type="image/webp"><img src="img/mini-icons/1.png" alt="Image"></picture>
+								</div>
+								<span class="_icon-arrow">Оборудование штрих-кодирования</span>
+							</button>
+							<div class="mobile-menu__subcatalog">
+								<p class="mobile-menu__go-back _icon-arrow">Каталог</p>
+								<p class="mobile-menu__subcatalog-title">
+									Все товары в категории
+								</p>
+								<ul>
+									<li class="mobile-menu__catalog-item-title">
+										<button class="mobile-menu__item-title-wrapper">
+											<div class="mobile-menu__img-wrapper">
+												<picture><source srcset="img/mini-icons/5.webp" type="image/webp"><img src="img/mini-icons/5.png" alt="Image"></picture>
+											</div>
+											<span class="_icon-arrow">Ручные терминалы сбора данных (2032)</span>
+										</button>
+										<div class="mobile-menu__subcatalog">
+											<p class="mobile-menu__go-back _icon-arrow">Каталог</p>
+											<p class="mobile-menu__subcatalog-title">
+												Все товары в категории
+											</p>
+											<ul>
+												<li class="mobile-menu__catalog-item-title">
+													<a href="#" class="mobile-menu__item-title-wrapper">
+														<span class="_icon-arrow">Термопринтеры</span>
+													</a>
+												</li>
+												<li class="mobile-menu__catalog-item-title">
+													<a href="#" class="mobile-menu__item-title-wrapper">
+														<span class="_icon-arrow">Термотрансферные принтеры</span>
+													</a>
+												</li>
+												<li class="mobile-menu__catalog-item-title">
+													<a href="#" class="mobile-menu__item-title-wrapper">
+														<span class="_icon-arrow">Настольные принтеры</span>
+													</a>
+												</li>
+												<li class="mobile-menu__catalog-item-title">
+													<a href="#" class="mobile-menu__item-title-wrapper">
+														<span class="_icon-arrow">Коммерческие принтеры</span>
+													</a>
+												</li>
+												<li class="mobile-menu__catalog-item-title">
+													<a href="#" class="mobile-menu__item-title-wrapper">
+														<span class="_icon-arrow">Промышленные принтеры</span>
+													</a>
+												</li>
+												<li class="mobile-menu__catalog-item-title">
+													<a href="#" class="mobile-menu__item-title-wrapper">
+														<span class="_icon-arrow">Мобильные (портативные)принтеры</span>
+													</a>
+												</li>
+												<li class="mobile-menu__catalog-item-title">
+													<a href="#" class="mobile-menu__item-title-wrapper">
+														<span class="_icon-arrow">RFID принтеры</span>
+													</a>
+												</li>
+												<li class="mobile-menu__catalog-item-title">
+													<a href="#" class="mobile-menu__item-title-wrapper">
+														<span class="_icon-arrow">Специальные принтеры</span>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</li>
+									<li class="mobile-menu__catalog-item-title">
+										<button class="mobile-menu__item-title-wrapper">
+											<div class="mobile-menu__img-wrapper">
+												<picture><source srcset="img/mini-icons/6.webp" type="image/webp"><img src="img/mini-icons/6.png" alt="Image"></picture>
+											</div>
+											<span class="_icon-arrow">Планшетные терминалы сбора данных (168)</span>
+										</button>
+									</li>
+									<li class="mobile-menu__catalog-item-title">
+										<button class="mobile-menu__item-title-wrapper">
+											<div class="mobile-menu__img-wrapper">
+												<picture><source srcset="img/mini-icons/7.webp" type="image/webp"><img src="img/mini-icons/7.png" alt="Image"></picture>
+											</div>
+											<span class="_icon-arrow">Терминалы сбора данных на транспорт (290)</span>
+										</button>
+									</li>
+									<li class="mobile-menu__catalog-item-title">
+										<button class="mobile-menu__item-title-wrapper">
+											<div class="mobile-menu__img-wrapper">
+												<picture><source srcset="img/mini-icons/8.webp" type="image/webp"><img src="img/mini-icons/8.png" alt="Image"></picture>
+											</div>
+											<span class="_icon-arrow">Научные терминалы сбора данных (110)</span>
+										</button>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="mobile-menu__catalog-item-title">
+							<button class="mobile-menu__item-title-wrapper">
+								<div class="mobile-menu__img-wrapper">
+									<picture><source srcset="img/mini-icons/2.webp" type="image/webp"><img src="img/mini-icons/2.png" alt="Image"></picture>
+								</div>
+								<span class="_icon-arrow">Банковское оборудование</span>
+							</button>
+						</li>
+						<li class="mobile-menu__catalog-item-title">
+							<button class="mobile-menu__item-title-wrapper">
+								<div class="mobile-menu__img-wrapper">
+									<picture><source srcset="img/mini-icons/3.webp" type="image/webp"><img src="img/mini-icons/3.png" alt="Image"></picture>
+								</div>
+								<span class="_icon-arrow">Электронное торговое оборудование</span>
+							</button>
+						</li>
+						<li class="mobile-menu__catalog-item-title">
+							<button class="mobile-menu__item-title-wrapper">
+								<div class="mobile-menu__img-wrapper">
+									<picture><source srcset="img/mini-icons/4.webp" type="image/webp"><img src="img/mini-icons/4.png" alt="Image"></picture>
+								</div>
+								<span class="_icon-arrow">Оборудование для торговли</span>
+							</button>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+
+		<a href="#" data-goto=".header" class="arrow-top _icon-arrow"></a>
 		<main class="page">
 			<div class="breadcrumbs">
 				<div class="breadcrumbs__container">
@@ -1906,7 +2033,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20230510174127"></script>
+	<script src="js/app.min.js?_v=20230513134919"></script>
 </body>
 
 </html>

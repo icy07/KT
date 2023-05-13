@@ -2,10 +2,10 @@
 <html lang="ru">
 
 <head>
-	<title>Главная</title>
+	<title>Товар</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
-	<link rel="stylesheet" href="css/style.min.css?_v=20230510174127">
+	<link rel="stylesheet" href="css/style.min.css?_v=20230513134919">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
@@ -17,7 +17,9 @@
 					<img src="img/logo.svg" alt="logo">
 				</a>
 				<div class="header__mobile-buttons-wrapper">
-					<a href="#" class="header__mobile-search-btn _icon-search"></a>
+					<div class="header__mobile-search-block">
+						<button class="header__mobile-search-btn _icon-search"></button>
+					</div>
 					<a href="tel:84951222018" class="header__mobile-phone-btn _icon-phone-full"></a>
 					<div class="header__menu menu">
 						<button type="button" class="menu__icon icon-menu"><span></span></button>
@@ -32,32 +34,6 @@
 								<ul>
 									<li>
 										<a href="#" class="menu__catalog-title _icon-arrow">Каталог</a>
-										<ul class="menu__catalog">
-											<li class="catalog__title">
-												<div class="catalog__img-wrapper">
-													<picture><source srcset="img/mini-icons/1.webp" type="image/webp"><img src="img/mini-icons/1.png" alt="Image"></picture>
-												</div>
-												<span class="_icon-arrow">Оборудование штрих-кодирования</span>
-											</li>
-											<li class="catalog__title">
-												<div class="catalog__img-wrapper">
-													<picture><source srcset="img/mini-icons/2.webp" type="image/webp"><img src="img/mini-icons/2.png" alt="Image"></picture>
-												</div>
-												<span class="_icon-arrow">Банковское оборудование</span>
-											</li>
-											<li class="catalog__title">
-												<div class="catalog__img-wrapper">
-													<picture><source srcset="img/mini-icons/3.webp" type="image/webp"><img src="img/mini-icons/3.png" alt="Image"></picture>
-												</div>
-												<span class="_icon-arrow">Электронное торговое оборудование</span>
-											</li>
-											<li class="catalog__title">
-												<div class="catalog__img-wrapper">
-													<picture><source srcset="img/mini-icons/4.webp" type="image/webp"><img src="img/mini-icons/4.png" alt="Image"></picture>
-												</div>
-												<span class="_icon-arrow">Оборудование для торговли</span>
-											</li>
-										</ul>
 									</li>
 									<li><a href="#" class="_icon-arrow">Услуги</a></li>
 									<li><a href="#" class="_icon-arrow">Доставка</a></li>
@@ -780,11 +756,13 @@
 							</ul>
 						</nav>
 					</div>
-
-					<div class="header__search-wrapper">
+					<div class="header__search-wrapper" data-da=".header__mobile-search-block, 600, first">
 						<form action="#" class="header__search">
-							<input autocomplete="off" type="text" name="search" data-required data-error placeholder="Поиск" class="header__search-input input">
-							<button class="header__search-btn _icon-search"></button>
+							<div class="header__search-input-wrapper">
+								<input autocomplete="off" type="text" name="search" data-required data-error placeholder="Поиск" class="header__search-input input">
+								<button class="header__search-btn _icon-search"></button>
+							</div>
+							<button type="button" class="header__search-cancel-btn">Отмена</button>
 						</form>
 						<div class="header__search-slide-block" hidden>
 							<ul class="header__search-list">
@@ -897,25 +875,25 @@
 								<div class="catalog__main">
 									<div data-tabs class="catalog__tabs-main">
 										<nav data-tabs-titles class="catalog__navigation catalog__navigation-main">
-											<button type="submit" class="catalog__title _tab-active">
+											<button type="button" class="catalog__title _tab-active">
 												<div class="catalog__img-wrapper">
 													<picture><source srcset="img/mini-icons/1.webp" type="image/webp"><img src="img/mini-icons/1.png" alt="Image"></picture>
 												</div>
 												<span class="_icon-arrow">Оборудование штрих-кодирования</span>
 											</button>
-											<button type="submit" class="catalog__title">
+											<button type="button" class="catalog__title">
 												<div class="catalog__img-wrapper">
 													<picture><source srcset="img/mini-icons/2.webp" type="image/webp"><img src="img/mini-icons/2.png" alt="Image"></picture>
 												</div>
 												<span class="_icon-arrow">Банковское оборудование</span>
 											</button>
-											<button type="submit" class="catalog__title">
+											<button type="button" class="catalog__title">
 												<div class="catalog__img-wrapper">
 													<picture><source srcset="img/mini-icons/3.webp" type="image/webp"><img src="img/mini-icons/3.png" alt="Image"></picture>
 												</div>
 												<span class="_icon-arrow">Электронное торговое оборудование</span>
 											</button>
-											<button type="submit" class="catalog__title">
+											<button type="button" class="catalog__title">
 												<div class="catalog__img-wrapper">
 													<picture><source srcset="img/mini-icons/4.webp" type="image/webp"><img src="img/mini-icons/4.png" alt="Image"></picture>
 												</div>
@@ -926,25 +904,25 @@
 											<div class="catalog__body catalog__body--second">
 												<div data-tabs class="catalog__tabs">
 													<nav data-tabs-titles class="catalog__navigation catalog__navigation--second">
-														<button type="submit" class="catalog__title _tab-active">
+														<button type="button" class="catalog__title _tab-active">
 															<div class="catalog__img-wrapper">
 																<picture><source srcset="img/mini-icons/5.webp" type="image/webp"><img src="img/mini-icons/5.png" alt="Image"></picture>
 															</div>
 															<span class="_icon-arrow">Ручные терминалы сбора данных (2032)</span>
 														</button>
-														<button type="submit" class="catalog__title">
+														<button type="button" class="catalog__title">
 															<div class="catalog__img-wrapper">
 																<picture><source srcset="img/mini-icons/6.webp" type="image/webp"><img src="img/mini-icons/6.png" alt="Image"></picture>
 															</div>
 															<span class="_icon-arrow">Планшетные терминалы сбора данных (168)</span>
 														</button>
-														<button type="submit" class="catalog__title">
+														<button type="button" class="catalog__title">
 															<div class="catalog__img-wrapper">
 																<picture><source srcset="img/mini-icons/7.webp" type="image/webp"><img src="img/mini-icons/7.png" alt="Image"></picture>
 															</div>
 															<span class="_icon-arrow">Терминалы сбора данных на транспорт (290)</span>
 														</button>
-														<button type="submit" class="catalog__title">
+														<button type="button" class="catalog__title">
 															<div class="catalog__img-wrapper">
 																<picture><source srcset="img/mini-icons/8.webp" type="image/webp"><img src="img/mini-icons/8.png" alt="Image"></picture>
 															</div>
@@ -1070,25 +1048,25 @@
 											<div class="catalog__body catalog__body--second">
 												<div data-tabs class="catalog__tabs">
 													<nav data-tabs-titles class="catalog__navigation catalog__navigation--second">
-														<button type="submit" class="catalog__title _tab-active">
+														<button type="button" class="catalog__title _tab-active">
 															<div class="catalog__img-wrapper">
 																<picture><source srcset="img/mini-icons/5.webp" type="image/webp"><img src="img/mini-icons/5.png" alt="Image"></picture>
 															</div>
 															<span class="_icon-arrow">Ручные терминалы сбора данных (2032)</span>
 														</button>
-														<button type="submit" class="catalog__title">
+														<button type="button" class="catalog__title">
 															<div class="catalog__img-wrapper">
 																<picture><source srcset="img/mini-icons/6.webp" type="image/webp"><img src="img/mini-icons/6.png" alt="Image"></picture>
 															</div>
 															<span class="_icon-arrow">Планшетные терминалы сбора данных (168)</span>
 														</button>
-														<button type="submit" class="catalog__title">
+														<button type="button" class="catalog__title">
 															<div class="catalog__img-wrapper">
 																<picture><source srcset="img/mini-icons/7.webp" type="image/webp"><img src="img/mini-icons/7.png" alt="Image"></picture>
 															</div>
 															<span class="_icon-arrow">Терминалы сбора данных на транспорт (290)</span>
 														</button>
-														<button type="submit" class="catalog__title">
+														<button type="button" class="catalog__title">
 															<div class="catalog__img-wrapper">
 																<picture><source srcset="img/mini-icons/8.webp" type="image/webp"><img src="img/mini-icons/8.png" alt="Image"></picture>
 															</div>
@@ -1543,6 +1521,155 @@
 				</div>
 			</div>
 		</header>
+
+		<div class="mobile-menu">
+			<div class="mobile-menu__wrapper">
+				<a href="index.html" class="mobile-menu__block _icon-home">
+					Главная
+				</a>
+				<div class="mobile-menu__block mobile-menu__block--catalog _icon-squares">
+					Каталог
+				</div>
+				<a href="#" class="mobile-menu__block _icon-cart">
+					Корзина
+				</a>
+				<a href="#" class="mobile-menu__block _icon-user">
+					Профиль
+				</a>
+				<a href="#" class="mobile-menu__block _icon-heart">
+					Избранное
+				</a>
+			</div>
+			<div class="mobile-menu__catalog">
+				<p class="mobile-menu__catalog-title">Каталог</p>
+				<nav class="mobile-menu__catalog-main">
+					<ul class="mobile-menu__catalog-ul">
+						<li class="mobile-menu__catalog-item-title">
+							<button class="mobile-menu__item-title-wrapper">
+								<div class="mobile-menu__img-wrapper">
+									<picture><source srcset="img/mini-icons/1.webp" type="image/webp"><img src="img/mini-icons/1.png" alt="Image"></picture>
+								</div>
+								<span class="_icon-arrow">Оборудование штрих-кодирования</span>
+							</button>
+							<div class="mobile-menu__subcatalog">
+								<p class="mobile-menu__go-back _icon-arrow">Каталог</p>
+								<p class="mobile-menu__subcatalog-title">
+									Все товары в категории
+								</p>
+								<ul>
+									<li class="mobile-menu__catalog-item-title">
+										<button class="mobile-menu__item-title-wrapper">
+											<div class="mobile-menu__img-wrapper">
+												<picture><source srcset="img/mini-icons/5.webp" type="image/webp"><img src="img/mini-icons/5.png" alt="Image"></picture>
+											</div>
+											<span class="_icon-arrow">Ручные терминалы сбора данных (2032)</span>
+										</button>
+										<div class="mobile-menu__subcatalog">
+											<p class="mobile-menu__go-back _icon-arrow">Каталог</p>
+											<p class="mobile-menu__subcatalog-title">
+												Все товары в категории
+											</p>
+											<ul>
+												<li class="mobile-menu__catalog-item-title">
+													<a href="#" class="mobile-menu__item-title-wrapper">
+														<span class="_icon-arrow">Термопринтеры</span>
+													</a>
+												</li>
+												<li class="mobile-menu__catalog-item-title">
+													<a href="#" class="mobile-menu__item-title-wrapper">
+														<span class="_icon-arrow">Термотрансферные принтеры</span>
+													</a>
+												</li>
+												<li class="mobile-menu__catalog-item-title">
+													<a href="#" class="mobile-menu__item-title-wrapper">
+														<span class="_icon-arrow">Настольные принтеры</span>
+													</a>
+												</li>
+												<li class="mobile-menu__catalog-item-title">
+													<a href="#" class="mobile-menu__item-title-wrapper">
+														<span class="_icon-arrow">Коммерческие принтеры</span>
+													</a>
+												</li>
+												<li class="mobile-menu__catalog-item-title">
+													<a href="#" class="mobile-menu__item-title-wrapper">
+														<span class="_icon-arrow">Промышленные принтеры</span>
+													</a>
+												</li>
+												<li class="mobile-menu__catalog-item-title">
+													<a href="#" class="mobile-menu__item-title-wrapper">
+														<span class="_icon-arrow">Мобильные (портативные)принтеры</span>
+													</a>
+												</li>
+												<li class="mobile-menu__catalog-item-title">
+													<a href="#" class="mobile-menu__item-title-wrapper">
+														<span class="_icon-arrow">RFID принтеры</span>
+													</a>
+												</li>
+												<li class="mobile-menu__catalog-item-title">
+													<a href="#" class="mobile-menu__item-title-wrapper">
+														<span class="_icon-arrow">Специальные принтеры</span>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</li>
+									<li class="mobile-menu__catalog-item-title">
+										<button class="mobile-menu__item-title-wrapper">
+											<div class="mobile-menu__img-wrapper">
+												<picture><source srcset="img/mini-icons/6.webp" type="image/webp"><img src="img/mini-icons/6.png" alt="Image"></picture>
+											</div>
+											<span class="_icon-arrow">Планшетные терминалы сбора данных (168)</span>
+										</button>
+									</li>
+									<li class="mobile-menu__catalog-item-title">
+										<button class="mobile-menu__item-title-wrapper">
+											<div class="mobile-menu__img-wrapper">
+												<picture><source srcset="img/mini-icons/7.webp" type="image/webp"><img src="img/mini-icons/7.png" alt="Image"></picture>
+											</div>
+											<span class="_icon-arrow">Терминалы сбора данных на транспорт (290)</span>
+										</button>
+									</li>
+									<li class="mobile-menu__catalog-item-title">
+										<button class="mobile-menu__item-title-wrapper">
+											<div class="mobile-menu__img-wrapper">
+												<picture><source srcset="img/mini-icons/8.webp" type="image/webp"><img src="img/mini-icons/8.png" alt="Image"></picture>
+											</div>
+											<span class="_icon-arrow">Научные терминалы сбора данных (110)</span>
+										</button>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="mobile-menu__catalog-item-title">
+							<button class="mobile-menu__item-title-wrapper">
+								<div class="mobile-menu__img-wrapper">
+									<picture><source srcset="img/mini-icons/2.webp" type="image/webp"><img src="img/mini-icons/2.png" alt="Image"></picture>
+								</div>
+								<span class="_icon-arrow">Банковское оборудование</span>
+							</button>
+						</li>
+						<li class="mobile-menu__catalog-item-title">
+							<button class="mobile-menu__item-title-wrapper">
+								<div class="mobile-menu__img-wrapper">
+									<picture><source srcset="img/mini-icons/3.webp" type="image/webp"><img src="img/mini-icons/3.png" alt="Image"></picture>
+								</div>
+								<span class="_icon-arrow">Электронное торговое оборудование</span>
+							</button>
+						</li>
+						<li class="mobile-menu__catalog-item-title">
+							<button class="mobile-menu__item-title-wrapper">
+								<div class="mobile-menu__img-wrapper">
+									<picture><source srcset="img/mini-icons/4.webp" type="image/webp"><img src="img/mini-icons/4.png" alt="Image"></picture>
+								</div>
+								<span class="_icon-arrow">Оборудование для торговли</span>
+							</button>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+
+		<a href="#" data-goto=".header" class="arrow-top _icon-arrow"></a>
 		<main class="page">
 			<div class="breadcrumbs">
 				<div class="breadcrumbs__container">
@@ -1588,6 +1715,7 @@
 										<picture><source srcset="img/items/6.webp" type="image/webp"><img src="img/items/6.png" alt="Item"></picture>
 									</div>
 								</div>
+								<div class="item__pagination"></div>
 							</div>
 							<div class="item__sliders-bottom">
 								<div class="item__slider-thumb">
@@ -1781,78 +1909,88 @@
 						<button type="submit" class="item-info__title">Вопросы и ответы о товаре</button>
 					</nav>
 					<div data-tabs-body class="item-info__content">
-						<div class="item-info__body text-block">
-							<p class="text-block__text">
-								<span class="text-block__bold">Термопринтер Citizen</span> CL-S400 предназначен для печати
-								билетов, талонов, этикеток и квитанций методом термопечати.
-								Подходит для работы в малых и средних компаниях при небольшой суточной загрузке там, где
-								необходимо производство печати
-								непосредственно в присутствии посетителя. В аппарате не используются красящие ролики, что
-								значительно сокращает расходы.
-								Устройство может печатать на этикетках длиной до 812 мм, наносит графическую и текстовую
-								информацию, линейные и
-								двухлинейные коды.
-							</p>
-							<p class="text-block__title">Основные технические характеристики Citizen CL-S400</p>
-							<ul>
-								<li class="_icon-arrow">
-									Скорость печати – 150 мм/сек;
-								</li>
-								<li class="_icon-arrow">
-									Разрешение – 203 dpi;
-								</li>
-								<li class="_icon-arrow">
-									Интерфейсы – RS-232, USB;
-								</li>
-								<li class="_icon-arrow">
-									Оперативная память – 16 Мб;
-								</li>
-								<li class="_icon-arrow">
-									Флеш-память - 8 Мб;
-								</li>
-								<li class="_icon-arrow">
-									Максимальная суточная производительность - 3 000 единиц.
-								</li>
-							</ul>
-							<p class="text-block__title">Основные технические характеристики Citizen CL-S400</p>
-							<p class="text-block__text">
-								При помощи принтера возможно быстро производить печать на концертных, театральных, авиа- и
-								железнодорожных билетах. На
-								верхней части корпуса расположен двухцветный дисплей для контроля процесса печати.
-							</p>
-							<p class="text-block__text">
-								Аппарат оснащен накопителем фальцованных этикеток и держателем рулонных этикеток, регулировкой
-								ширины бумаги. Может
-								работать с перфорированными этикетками, фальцованными и штампованными материалами, бумагой
-								различной толщины, имеет
-								удобную и безопасную фронтальную подачу напечатанных изделий.
-							</p>
-							<p class="text-block__text">
-								Открываемая вверх крышка корпуса обеспечивает легкую замену расходных материалов и не требует
-								использования
-								дополнительного пространства.
-							</p>
-							<p class="text-block__title">Сфера применения Citizen CL-S400</p>
-							<ul>
-								<li class="_icon-arrow">
-									Скорость печати – 150 мм/сек;
-								</li>
-								<li class="_icon-arrow">
-									Разрешение – 203 dpi;
-								</li>
-								<li class="_icon-arrow">
-									Интерфейсы – RS-232, USB;
-								</li>
-								<li class="_icon-arrow">
-									Оперативная память – 16 Мб;
-								</li>
-								<li class="_icon-arrow">
-									Флеш-память - 8 Мб;
-								</li>
-								<li class="_icon-arrow">
-									Максимальная суточная производительность - 3 000 единиц.
-								</li>
-							</ul>
+						<div class="item-info__body">
+							<div data-showmore data-showmore-media="600" class="item-info__showmore text-block">
+								<div data-showmore-content>
+									<p class="text-block__text">
+										<span class="text-block__bold">Термопринтер Citizen</span> CL-S400 предназначен для печати
+										билетов, талонов, этикеток и квитанций методом термопечати.
+										Подходит для работы в малых и средних компаниях при небольшой суточной загрузке там, где
+										необходимо производство печати
+										непосредственно в присутствии посетителя. В аппарате не используются красящие ролики, что
+										значительно сокращает расходы.
+										Устройство может печатать на этикетках длиной до 812 мм, наносит графическую и текстовую
+										информацию, линейные и
+										двухлинейные коды.
+									</p>
+									<p class="text-block__title">Основные технические характеристики Citizen CL-S400</p>
+									<ul>
+										<li class="_icon-arrow">
+											Скорость печати – 150 мм/сек;
+										</li>
+										<li class="_icon-arrow">
+											Разрешение – 203 dpi;
+										</li>
+										<li class="_icon-arrow">
+											Интерфейсы – RS-232, USB;
+										</li>
+										<li class="_icon-arrow">
+											Оперативная память – 16 Мб;
+										</li>
+										<li class="_icon-arrow">
+											Флеш-память - 8 Мб;
+										</li>
+										<li class="_icon-arrow">
+											Максимальная суточная производительность - 3 000 единиц.
+										</li>
+									</ul>
+									<p class="text-block__title">Основные технические характеристики Citizen CL-S400</p>
+									<p class="text-block__text">
+										При помощи принтера возможно быстро производить печать на концертных, театральных, авиа- и
+										железнодорожных билетах. На
+										верхней части корпуса расположен двухцветный дисплей для контроля процесса печати.
+									</p>
+									<p class="text-block__text">
+										Аппарат оснащен накопителем фальцованных этикеток и держателем рулонных этикеток,
+										регулировкой
+										ширины бумаги. Может
+										работать с перфорированными этикетками, фальцованными и штампованными материалами, бумагой
+										различной толщины, имеет
+										удобную и безопасную фронтальную подачу напечатанных изделий.
+									</p>
+									<p class="text-block__text">
+										Открываемая вверх крышка корпуса обеспечивает легкую замену расходных материалов и не
+										требует
+										использования
+										дополнительного пространства.
+									</p>
+									<p class="text-block__title">Сфера применения Citizen CL-S400</p>
+									<ul>
+										<li class="_icon-arrow">
+											Скорость печати – 150 мм/сек;
+										</li>
+										<li class="_icon-arrow">
+											Разрешение – 203 dpi;
+										</li>
+										<li class="_icon-arrow">
+											Интерфейсы – RS-232, USB;
+										</li>
+										<li class="_icon-arrow">
+											Оперативная память – 16 Мб;
+										</li>
+										<li class="_icon-arrow">
+											Флеш-память - 8 Мб;
+										</li>
+										<li class="_icon-arrow">
+											Максимальная суточная производительность - 3 000 единиц.
+										</li>
+									</ul>
+								</div>
+								<button data-showmore-button type="button" class="item-info__more-btn">
+									<span>Читать полностью</span>
+									<span>Скыть</span>
+								</button>
+							</div>
 						</div>
 						<div class="item-info__body">
 							2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore odio exercitationem, excepturi
@@ -1888,140 +2026,224 @@
 								</div>
 								<div class="reviews__main">
 									<div class="reviews__comment">
-										<div class="reviews__comment-left">
-											<p class="reviews__comment-name">
-												Елена
-											</p>
-											<p class="reviews__comment-text">
-												Я в восторге от этого товара, даже сняла видеоотзыв, чтобы поделиться своей радостью
-												насколько он выручает
-											</p>
-											<p class="reviews__comment-bold">Достоинства</p>
-											<p class="reviews__comment-text">
-												Мощный 3 в 1
-											</p>
-											<p class="reviews__comment-bold">Недостатки</p>
-											<p class="reviews__comment-text">
-												Нет
-											</p>
-											<a href="#" class="reviews__comment-btn _icon-comment">Ответить</a>
-										</div>
-										<div class="reviews__comment-right">
-											<p class="reviews__comment-date">17 февраля 2023</p>
-											<div class="reviews__comment-rating">
-												<div class="rating">
-													<div class="rating__body">
-														<div class="rating__active five-star"></div>
+										<div class="reviews__top">
+											<div class="reviews__comment-left">
+												<div class="reviews__comment-name-wrapper">
+													<p class="reviews__comment-name">
+														Елена
+													</p>
+													<div class="reviews__comment-right-top reviews__comment-right-top--mobile">
+														<p class="reviews__comment-date">17 февраля 2023</p>
+														<div class="reviews__comment-rating">
+															<div class="rating">
+																<div class="rating__body">
+																	<div class="rating__active five-star"></div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<p class="reviews__comment-text">
+													Я в восторге от этого товара, даже сняла видеоотзыв, чтобы поделиться своей
+													радостью
+													насколько он выручает
+												</p>
+												<p class="reviews__comment-bold">Достоинства</p>
+												<p class="reviews__comment-text">
+													Мощный 3 в 1
+												</p>
+												<p class="reviews__comment-bold">Недостатки</p>
+												<p class="reviews__comment-text">
+													Нет
+												</p>
+											</div>
+											<div class="reviews__comment-right">
+												<div class="reviews__comment-right-top reviews__comment-right-top--pc">
+													<p class="reviews__comment-date">17 февраля 2023</p>
+													<div class="reviews__comment-rating">
+														<div class="rating">
+															<div class="rating__body">
+																<div class="rating__active five-star"></div>
+															</div>
+														</div>
 													</div>
 												</div>
 											</div>
+										</div>
+										<div class="reviews__bottom">
+											<a href="#" class="reviews__comment-btn _icon-comment">Ответить</a>
+
 											<div class="reviews__comment-reaction">
 												<a href="#" class="reviews__comment-reaction-btn reviews__like _icon-like"></a>
 												<a href="#" class="reviews__comment-reaction-btn reviews__dislike _icon-like"></a>
 											</div>
 										</div>
+
 									</div>
 									<div class="reviews__comment">
-										<div class="reviews__comment-left">
-											<p class="reviews__comment-name">
-												Елена
-											</p>
-											<p class="reviews__comment-text">
-												Я в восторге от этого товара, даже сняла видеоотзыв, чтобы поделиться своей радостью
-												насколько он выручает
-											</p>
-											<p class="reviews__comment-bold">Достоинства</p>
-											<p class="reviews__comment-text">
-												Мощный 3 в 1
-											</p>
-											<p class="reviews__comment-bold">Недостатки</p>
-											<p class="reviews__comment-text">
-												Нет
-											</p>
-											<a href="#" class="reviews__comment-btn _icon-comment">Ответить</a>
-										</div>
-										<div class="reviews__comment-right">
-											<p class="reviews__comment-date">17 февраля 2023</p>
-											<div class="reviews__comment-rating">
-												<div class="rating">
-													<div class="rating__body">
-														<div class="rating__active five-star"></div>
+										<div class="reviews__top">
+											<div class="reviews__comment-left">
+												<div class="reviews__comment-name-wrapper">
+													<p class="reviews__comment-name">
+														Елена
+													</p>
+													<div class="reviews__comment-right-top reviews__comment-right-top--mobile">
+														<p class="reviews__comment-date">17 февраля 2023</p>
+														<div class="reviews__comment-rating">
+															<div class="rating">
+																<div class="rating__body">
+																	<div class="rating__active five-star"></div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<p class="reviews__comment-text">
+													Я в восторге от этого товара, даже сняла видеоотзыв, чтобы поделиться своей
+													радостью
+													насколько он выручает
+												</p>
+												<p class="reviews__comment-bold">Достоинства</p>
+												<p class="reviews__comment-text">
+													Мощный 3 в 1
+												</p>
+												<p class="reviews__comment-bold">Недостатки</p>
+												<p class="reviews__comment-text">
+													Нет
+												</p>
+											</div>
+											<div class="reviews__comment-right">
+												<div class="reviews__comment-right-top reviews__comment-right-top--pc">
+													<p class="reviews__comment-date">17 февраля 2023</p>
+													<div class="reviews__comment-rating">
+														<div class="rating">
+															<div class="rating__body">
+																<div class="rating__active five-star"></div>
+															</div>
+														</div>
 													</div>
 												</div>
 											</div>
+										</div>
+										<div class="reviews__bottom">
+											<a href="#" class="reviews__comment-btn _icon-comment">Ответить</a>
+
 											<div class="reviews__comment-reaction">
 												<a href="#" class="reviews__comment-reaction-btn reviews__like _icon-like"></a>
 												<a href="#" class="reviews__comment-reaction-btn reviews__dislike _icon-like"></a>
 											</div>
 										</div>
+
 									</div>
 									<div class="reviews__comment">
-										<div class="reviews__comment-left">
-											<p class="reviews__comment-name">
-												Елена
-											</p>
-											<p class="reviews__comment-text">
-												Я в восторге от этого товара, даже сняла видеоотзыв, чтобы поделиться своей радостью
-												насколько он выручает
-											</p>
-											<p class="reviews__comment-bold">Достоинства</p>
-											<p class="reviews__comment-text">
-												Мощный 3 в 1
-											</p>
-											<p class="reviews__comment-bold">Недостатки</p>
-											<p class="reviews__comment-text">
-												Нет
-											</p>
-											<a href="#" class="reviews__comment-btn _icon-comment">Ответить</a>
-										</div>
-										<div class="reviews__comment-right">
-											<p class="reviews__comment-date">17 февраля 2023</p>
-											<div class="reviews__comment-rating">
-												<div class="rating">
-													<div class="rating__body">
-														<div class="rating__active five-star"></div>
+										<div class="reviews__top">
+											<div class="reviews__comment-left">
+												<div class="reviews__comment-name-wrapper">
+													<p class="reviews__comment-name">
+														Елена
+													</p>
+													<div class="reviews__comment-right-top reviews__comment-right-top--mobile">
+														<p class="reviews__comment-date">17 февраля 2023</p>
+														<div class="reviews__comment-rating">
+															<div class="rating">
+																<div class="rating__body">
+																	<div class="rating__active five-star"></div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<p class="reviews__comment-text">
+													Я в восторге от этого товара, даже сняла видеоотзыв, чтобы поделиться своей
+													радостью
+													насколько он выручает
+												</p>
+												<p class="reviews__comment-bold">Достоинства</p>
+												<p class="reviews__comment-text">
+													Мощный 3 в 1
+												</p>
+												<p class="reviews__comment-bold">Недостатки</p>
+												<p class="reviews__comment-text">
+													Нет
+												</p>
+											</div>
+											<div class="reviews__comment-right">
+												<div class="reviews__comment-right-top reviews__comment-right-top--pc">
+													<p class="reviews__comment-date">17 февраля 2023</p>
+													<div class="reviews__comment-rating">
+														<div class="rating">
+															<div class="rating__body">
+																<div class="rating__active five-star"></div>
+															</div>
+														</div>
 													</div>
 												</div>
 											</div>
+										</div>
+										<div class="reviews__bottom">
+											<a href="#" class="reviews__comment-btn _icon-comment">Ответить</a>
+
 											<div class="reviews__comment-reaction">
 												<a href="#" class="reviews__comment-reaction-btn reviews__like _icon-like"></a>
 												<a href="#" class="reviews__comment-reaction-btn reviews__dislike _icon-like"></a>
 											</div>
 										</div>
+
 									</div>
 									<div class="reviews__comment">
-										<div class="reviews__comment-left">
-											<p class="reviews__comment-name">
-												Елена
-											</p>
-											<p class="reviews__comment-text">
-												Я в восторге от этого товара, даже сняла видеоотзыв, чтобы поделиться своей радостью
-												насколько он выручает
-											</p>
-											<p class="reviews__comment-bold">Достоинства</p>
-											<p class="reviews__comment-text">
-												Мощный 3 в 1
-											</p>
-											<p class="reviews__comment-bold">Недостатки</p>
-											<p class="reviews__comment-text">
-												Нет
-											</p>
-											<a href="#" class="reviews__comment-btn _icon-comment">Ответить</a>
-										</div>
-										<div class="reviews__comment-right">
-											<p class="reviews__comment-date">17 февраля 2023</p>
-											<div class="reviews__comment-rating">
-												<div class="rating">
-													<div class="rating__body">
-														<div class="rating__active five-star"></div>
+										<div class="reviews__top">
+											<div class="reviews__comment-left">
+												<div class="reviews__comment-name-wrapper">
+													<p class="reviews__comment-name">
+														Елена
+													</p>
+													<div class="reviews__comment-right-top reviews__comment-right-top--mobile">
+														<p class="reviews__comment-date">17 февраля 2023</p>
+														<div class="reviews__comment-rating">
+															<div class="rating">
+																<div class="rating__body">
+																	<div class="rating__active five-star"></div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<p class="reviews__comment-text">
+													Я в восторге от этого товара, даже сняла видеоотзыв, чтобы поделиться своей
+													радостью
+													насколько он выручает
+												</p>
+												<p class="reviews__comment-bold">Достоинства</p>
+												<p class="reviews__comment-text">
+													Мощный 3 в 1
+												</p>
+												<p class="reviews__comment-bold">Недостатки</p>
+												<p class="reviews__comment-text">
+													Нет
+												</p>
+											</div>
+											<div class="reviews__comment-right">
+												<div class="reviews__comment-right-top reviews__comment-right-top--pc">
+													<p class="reviews__comment-date">17 февраля 2023</p>
+													<div class="reviews__comment-rating">
+														<div class="rating">
+															<div class="rating__body">
+																<div class="rating__active five-star"></div>
+															</div>
+														</div>
 													</div>
 												</div>
 											</div>
+										</div>
+										<div class="reviews__bottom">
+											<a href="#" class="reviews__comment-btn _icon-comment">Ответить</a>
+
 											<div class="reviews__comment-reaction">
 												<a href="#" class="reviews__comment-reaction-btn reviews__like _icon-like"></a>
 												<a href="#" class="reviews__comment-reaction-btn reviews__dislike _icon-like"></a>
 											</div>
 										</div>
+
 									</div>
 								</div>
 								<a href="#" class="reviews__view-all _icon-long-arrow"><span>Смотреть все отзывы</span></a>
@@ -3411,7 +3633,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20230510174127"></script>
+	<script src="js/app.min.js?_v=20230513134919"></script>
 </body>
 
 </html>
