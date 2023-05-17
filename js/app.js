@@ -4988,7 +4988,7 @@
                     initTabs(tabsBlock);
                 }));
                 const ratingBtn = document.querySelector(".item__rating");
-                ratingBtn.addEventListener("click", (function() {
+                if (ratingBtn) ratingBtn.addEventListener("click", (function() {
                     const tabsBlock = document.querySelector(".item-info");
                     if (tabsBlock) {
                         const tabTitle = tabsBlock.querySelector(".tab-rating-title");
