@@ -1427,13 +1427,10 @@ body::after {
     font-size: 0.8125rem;
   }
 }
-.card__title::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
+@media (any-hover: hover) {
+  .card__title:hover {
+    text-decoration: underline;
+  }
 }
 .card__price-block {
   display: flex;
@@ -3371,6 +3368,11 @@ body::after {
   line-height: 1.3333333333;
   color: #3f3f3f;
 }
+@media (any-hover: hover) {
+  .main-slider__block-title:hover {
+    text-decoration: underline;
+  }
+}
 .main-slider__block-bottom {
   margin: 0.4375rem 0px 0px 0px;
   display: flex;
@@ -4554,6 +4556,7 @@ body::after {
   padding: 0 0.625rem;
 }
 .main-catalog__sort-title {
+  cursor: pointer;
   padding: 0.625rem 0;
   display: flex;
   justify-content: space-between;
@@ -5075,6 +5078,7 @@ body::after {
   margin-bottom: 0.9375rem;
 }
 .qna__item-title {
+  cursor: pointer;
   text-align: left;
   width: 100%;
   outline: none;

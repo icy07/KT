@@ -4987,6 +4987,20 @@
                     tabsBlock.addEventListener("click", setTabsAction);
                     initTabs(tabsBlock);
                 }));
+                const ratingBtn = document.querySelector(".item__rating");
+                ratingBtn.addEventListener("click", (function() {
+                    const tabsBlock = document.querySelector(".item-info");
+                    if (tabsBlock) {
+                        const tabTitle = tabsBlock.querySelector(".tab-rating-title");
+                        if (!tabTitle.classList.contains("_tab-active")) {
+                            let tabActiveTitle = tabsBlock.querySelectorAll("[data-tabs-title]._tab-active");
+                            tabActiveTitle.length ? tabActiveTitle = Array.from(tabActiveTitle).filter((item => item.closest("[data-tabs]") === tabsBlock)) : null;
+                            tabActiveTitle.length ? tabActiveTitle[0].classList.remove("_tab-active") : null;
+                            tabTitle.classList.add("_tab-active");
+                            setTabsStatus(tabsBlock);
+                        }
+                    }
+                }));
                 let mdQueriesArray = dataMediaQueries(tabs, "tabs");
                 if (mdQueriesArray && mdQueriesArray.length) mdQueriesArray.forEach((mdQueriesItem => {
                     mdQueriesItem.matchMedia.addEventListener("change", (function() {
@@ -5350,14 +5364,6 @@
                         return;
                     }
                 }.bind(this));
-                if (this.options.hashSettings.goHash) {
-                    window.addEventListener("hashchange", function() {
-                        if (window.location.hash) this._openToHash(); else this.close(this.targetOpen.selector);
-                    }.bind(this));
-                    window.addEventListener("load", function() {
-                        if (window.location.hash) this._openToHash();
-                    }.bind(this));
-                }
             }
             open(selectorValue) {
                 if (bodyLockStatus) {
@@ -5454,11 +5460,6 @@
             _getHash() {
                 if (this.options.hashSettings.location) this.hash = this.targetOpen.selector.includes("#") ? this.targetOpen.selector : this.targetOpen.selector.replace(".", "#");
             }
-            _openToHash() {
-                let classInHash = document.querySelector(`.${window.location.hash.replace("#", "")}`) ? `.${window.location.hash.replace("#", "")}` : document.querySelector(`${window.location.hash}`) ? `${window.location.hash}` : null;
-                const buttons = document.querySelector(`[${this.options.attributeOpenButton} = "${classInHash}"]`) ? document.querySelector(`[${this.options.attributeOpenButton} = "${classInHash}"]`) : document.querySelector(`[${this.options.attributeOpenButton} = "${classInHash.replace(".", "#")}"]`);
-                if (buttons && classInHash) this.open(classInHash);
-            }
             _setHash() {
                 history.pushState("", "", this.hash);
             }
@@ -5513,8 +5514,7 @@
                         behavior: "smooth"
                     });
                 }
-                FLS(`[gotoBlock]: Юхуу...едем к ${targetBlock}`);
-            } else FLS(`[gotoBlock]: Ой ой..Такого блока нет на странице: ${targetBlock}`);
+            }
         };
         function formFieldsInit(options = {
             viewPass: false
@@ -12918,6 +12918,9 @@ PERFORMANCE OF THIS SOFTWARE.
         }
         let collapse = document.querySelector(".main-catalog__left-wrapper-btn");
         if (collapse) if (document.documentElement.clientWidth < 880) collapse.classList.remove("_spoller-active");
+        window.addEventListener("load", (function() {
+            if (getHash() === "tab-10-4") gotoBlock(".item-info", false, 500, 80);
+        }));
         isWebp();
         menuInit();
         spollers();
