@@ -9821,33 +9821,38 @@
                         }
                     }
                 });
-                new core(".cards-slider__slider", {
-                    modules: [ Navigation, freeMode ],
-                    observer: true,
-                    observeParents: true,
-                    slidesPerView: "auto",
-                    spaceBetween: 20,
-                    autoHeight: true,
-                    simulateTouch: false,
-                    freeMode: true,
-                    speed: 400,
-                    navigation: {
-                        nextEl: ".cards-slider__button-next",
-                        prevEl: ".cards-slider__button-prev"
-                    },
-                    breakpoints: {
-                        750: {
-                            freeMode: false,
-                            slidesPerView: 3
+                let cardsSliders = document.querySelectorAll(".cards-slider");
+                if (cardsSliders) cardsSliders.forEach((function(container) {
+                    let prevButton = container.querySelector(".cards-slider__button-prev");
+                    let nextButton = container.querySelector(".cards-slider__button-next");
+                    new core(container.querySelector(".cards-slider__slider"), {
+                        modules: [ Navigation, freeMode ],
+                        observer: true,
+                        observeParents: true,
+                        slidesPerView: "auto",
+                        spaceBetween: 20,
+                        autoHeight: true,
+                        simulateTouch: false,
+                        freeMode: true,
+                        speed: 400,
+                        navigation: {
+                            nextEl: nextButton,
+                            prevEl: prevButton
                         },
-                        920: {
-                            slidesPerView: 4
-                        },
-                        1300: {
-                            slidesPerView: 5
+                        breakpoints: {
+                            750: {
+                                freeMode: false,
+                                slidesPerView: 3
+                            },
+                            920: {
+                                slidesPerView: 4
+                            },
+                            1300: {
+                                slidesPerView: 5
+                            }
                         }
-                    }
-                });
+                    });
+                }));
                 const itemThumb = new core(".item__slider-thumb", {
                     observer: true,
                     observeParents: true,

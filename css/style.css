@@ -2553,9 +2553,15 @@ body::after {
   max-width: 100%;
 }
 .catalog__rec-card-title {
+  display: inline-block;
   font-size: 0.875rem;
   line-height: 1.5;
   margin: 0.5rem 0;
+}
+@media (any-hover: hover) {
+  .catalog__rec-card-title:hover {
+    text-decoration: underline;
+  }
 }
 .catalog__rec-price {
   font-size: 1.125rem;
