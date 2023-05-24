@@ -5001,6 +5001,20 @@
                         }
                     }
                 }));
+                const descrBtn = document.querySelector(".item__description-link");
+                if (descrBtn) descrBtn.addEventListener("click", (function() {
+                    const tabsBlock = document.querySelector(".item-info");
+                    if (tabsBlock) {
+                        const tabTitle = tabsBlock.querySelector(".tab-desc-title");
+                        if (!tabTitle.classList.contains("_tab-active")) {
+                            let tabActiveTitle = tabsBlock.querySelectorAll("[data-tabs-title]._tab-active");
+                            tabActiveTitle.length ? tabActiveTitle = Array.from(tabActiveTitle).filter((item => item.closest("[data-tabs]") === tabsBlock)) : null;
+                            tabActiveTitle.length ? tabActiveTitle[0].classList.remove("_tab-active") : null;
+                            tabTitle.classList.add("_tab-active");
+                            setTabsStatus(tabsBlock);
+                        }
+                    }
+                }));
                 let mdQueriesArray = dataMediaQueries(tabs, "tabs");
                 if (mdQueriesArray && mdQueriesArray.length) mdQueriesArray.forEach((mdQueriesItem => {
                     mdQueriesItem.matchMedia.addEventListener("change", (function() {
